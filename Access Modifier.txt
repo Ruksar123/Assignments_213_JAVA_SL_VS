@@ -1,0 +1,152 @@
+package Modifier1.program;
+
+public class M {
+
+	private int A = 5;
+	long R= 102625L;
+	protected float f=350.214f;
+	
+
+		protected void methodProtected() {
+			methodPrivate();	
+		}
+
+		void methodDefault() {
+			methodPrivate();
+		}
+
+		public void methodPublic() {
+			methodPrivate();
+		}
+		
+		private void methodPrivate(){
+			System.out.println("Class M: methodprotected");
+			System.out.println("value of Private value A" + A);
+			System.out.println("value of long " + R);
+			System.out.println("value of protected value f " + f);
+		}
+
+}
+package Modifier1.program;
+
+public class N {
+
+	public int B = 5;
+	protected long J= 102625L;
+	 float K=350.214f;
+	
+
+		protected void methodProtected1() {
+			methodPrivate();
+		}
+		
+		void methodDefault() {
+			methodPrivate();
+		}
+
+		public void methodPublic() {
+			methodPrivate(); 
+		}
+		
+		private void methodPrivate() {
+			System.out.println("Class N: methodProtected");
+			System.out.println("value of Protected value J" + J);
+			System.out.println("value of public B " + B);
+			System.out.println("value of float value K " + K);
+		}
+
+}
+package Modifier1.program;
+
+public class P {
+	
+
+	protected void methodProtected() {
+		System.out.println("class P: methodProtected");	
+	}
+
+	void methodDefault() {
+		System.out.println("class P: methodDefault");	
+	}
+
+	public void methodPublic() {
+		System.out.println("class P: methodPublic");	
+	}
+	
+	private void methodPrivate(){
+		System.out.println("Class P: methodPrivate");
+	}
+	
+	public static void main(String[] args) {
+	new M().methodPublic();
+	new M().methodProtected();
+	new M().methodDefault();
+	System.out.println("value of long " + new M().R);
+	
+	new N().methodPublic();package Modifier1.program;
+
+public class X {
+	private int t=90;
+	long h=9000;
+	protected float f1=53.03646f;
+	public char c='d';
+	
+	public void methodPublic(){
+		methodPrivate();
+	}
+	protected void methodProtected() {
+		methodPrivate();
+	}
+	void methodDefault() {
+		methodPrivate();
+	}
+	
+	private void methodPrivate(){
+		System.out.println("Class X ");
+		System.out.println("value of private value t " + t);
+		System.out.println("value of long " + h);
+		System.out.println("value of protected value f1 " + f1);
+		System.out.println("value of public value c " + c);
+	}
+}
+
+	new N().methodProtected1();
+	new N().methodDefault();
+	System.out.println("value of long " + new N().J);
+	}
+
+}
+package Modifier1.program;
+
+public class Y extends N{
+
+	public static void main(String[] args) {
+		new N().methodPublic();
+		new M().methodPublic();
+		new X().methodPublic();
+	}
+
+}
+package Modifier1.program;
+
+public class Z extends M{
+
+	public static void main(String[] args) {
+		new M().methodPublic();
+		new N().methodPublic();
+		new P().methodPublic();
+		new X().methodPublic();
+
+	}
+
+}
+package Modifier1.program;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
