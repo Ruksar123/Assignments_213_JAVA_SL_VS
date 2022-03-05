@@ -1,0 +1,40 @@
+Add the color property with the help of ElementRef.
+
+// Required services for custom directives
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
+
+@Directive({
+  selector: '[appChangeColor]' // Directive selector
+})
+
+export class ChangeColorDirective {
+
+  constructor(elem: ElementRef, renderer: Renderer2) {
+    renderer.setStyle(elem.nativeElement, 'color', 'olive');
+  }
+
+}
+
+
+Declare the directive in declaration array.
+
+import { ChangeColorDirective } from './ChangeColor.directive';
+
+@NgModule({
+    imports: [
+        SharedModule,
+        AppRoutingModule
+    ],
+    declarations: [
+        ChangeColorDirective,
+        ProductComponent,
+        MyUpperPipe,
+        DiscountPipe,
+        ProductSearch,
+        ProductDetailComponent
+    ],
+
+
+Add the created directive as a property.
+
+ <h4 appChangeColor>Number of Product Serach on Basis of {{userInput}}:</h4>

@@ -1,0 +1,36 @@
+Product-list.component.html.
+
+<td [style.color]="'#306A9D'" [style.font-weight]="700" [style.font-size.px]="20">
+   {{ product.productName | uppercase }}
+</td>
+
+
+convert-to-spaces.pipe.ts. 
+
+import { Pipe, PipeTransform } from "@angular/core";
+@Pipe({
+   name: 'convertToSpaces'
+})
+export class ConvertToSpacesPipe implements PipeTransform{
+   transform(value:string, character:string, ) {
+       return value.replace(character, '@');
+   }
+}
+
+
+Import convert-to-spaces.pipe.ts to app.module.ts and declare it inside declaration array.
+import { ConvertToSpacesPipe } from 'src/app/products/convert-to-spaces.pipe';
+
+declarations: [
+   AppComponent,
+   ProductListComponent,
+   ConvertToSpacesPipe
+ ]
+
+
+Add the following code in Product-list.component.html.
+   
+<td>{{ product.productCode | convertToSpaces:'-'}}</td>
+
+
+

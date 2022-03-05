@@ -1,0 +1,32 @@
+Product-list.component.html.
+  <button [attr.disabled]=”true” class="btn btn-primary" (click)='toggleImage()'>
+      Show Image
+  </button>
+
+
+Create a CSS class name price
+.inStock{
+   background: #096d09;
+  color:#ffff;
+   Font-size:15px;
+}
+
+
+Apply the CSS class in Product-list.component.html file and set its value to true
+ <td [class.inStock]="true">
+    {{ product.price}}
+</td>
+
+
+Bind a color and font-weight style to the product element in Product-list.component.html file
+  <td [style.color]="'#306A9D'" [style.font-weight]="700">
+      {{ product.productName }}
+  </td>
+
+
+You can also apply conditional CSS using style binding
+ <td [style.color]="product.price > 20 ? 'red': 'green'" [style.font-size.px]="16"  [style.font-weight]="700">
+       {{ product.price}}
+ </td>
+
+
